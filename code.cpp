@@ -269,23 +269,23 @@ int main() {
             int countX = 0;
             int countO = 0;
 
-            int rightCrossIndex = cross;
+            int leftCrossIndex = cross;
             for(int i=0;i<size;i++) {
-                if(rightCrossIndex >= size*size || rightCrossIndex < 0) break;
+                if(leftCrossIndex >= size*size || leftCrossIndex < 0) break;
 
-                if(grid[rightCrossIndex] == ' ') {
+                if(grid[leftCrossIndex] == ' ') {
                     countX = 0;
                     countO = 0;
                 }
-                else if(grid[rightCrossIndex] == player1Letter) {
+                else if(grid[leftCrossIndex] == player1Letter) {
                     countX++;
                     countO = 0;
                 }
-                else if(grid[rightCrossIndex] == player2Letter) {
+                else if(grid[leftCrossIndex] == player2Letter) {
                     countO++;
                     countX = 0;
                 }
-                rightCrossIndex += size - 1;
+                leftCrossIndex += size - 1;
                 if(countX == winSize) {
                     PrintGrid(grid, size); //! Print out a new grid
                     playing = false;
